@@ -15,7 +15,7 @@ Follow these steps to get the project up and running on your local machine.
    git clone https://github.com/sharifulkawsar/set-image-pdf.git
 2. Composer install:
     ```sh
-    compost install
+    composer install
 3. Create a .env file:
     ```sh
     cp .env.example .env
