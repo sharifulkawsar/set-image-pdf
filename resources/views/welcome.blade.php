@@ -19,7 +19,7 @@
         <div class="card border-0 bg-light">
             <div class="card-body mx-auto" style="max-width: 400px;">
                 <h4 class="card-title mt-3 text-center fw-bold">Add Image on PDF</h4>
-                <p class="text-danger">*pdf and image must be required.</p>
+                <p class="text-danger fw-bold">*pdf and image must be required.</p>
 
                 @if (session('error'))
                     <div class="alert alert-danger">
@@ -30,7 +30,7 @@
                 <form action="{{ route('modify.pdf') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="pdf" class="fw-bold">Pdf</label>
+                        <label for="pdf" class="fw-bold">Pdf</label> <span class="text-danger">*</span>
                         <input class="form-control" type="file" name="pdf" accept=".pdf" required>
                         @error('pdf')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -47,19 +47,19 @@
                             value="{{ old('y_axis') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="fw-bold">Image</label>
+                        <label for="image" class="fw-bold">Image</label> <span class="text-danger">*</span>
                         <input class="form-control" type="file" name="image" accept="image/*" required>
                         @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="height" class="fw-bold">Height</label>
+                        <label for="height" class="fw-bold">Height (Dimension only mm)</label>
                         <input name="height" class="form-control" placeholder="Height" type="number"
                             value="{{ old('height') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="width" class="fw-bold">Width</label>
+                        <label for="width" class="fw-bold">Width (Dimension only mm)</label>
                         <input name="width" class="form-control" placeholder="Width" type="number"
                             value="{{ old('width') }}">
                     </div>
